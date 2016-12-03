@@ -1,0 +1,17 @@
+<h1>Url Shortener</h1>
+<%= form_for :url, url: urls_path do |f| %>
+	<% if !@url.nil? %>
+		<% if @url.errors.any? %>
+			<%= pluralize(@url.errors.count, "Error") %>
+			<ul>
+				<% @url.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		<% end %>
+	<% end %>
+
+	<%= f.label "Paste your url below" %>
+	<%= f.text_field :long_url %>
+	<%= f.submit %>
+<% end %>

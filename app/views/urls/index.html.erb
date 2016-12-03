@@ -1,0 +1,15 @@
+<%= link_to "Shorten New Url", new_url_path %>
+<h1>Short Urls</h1>
+<table>
+	<tr>
+		<th>Short Url</th>
+		<th>Long Url</th>
+	</tr>
+		<% @urls.each do |url| %>
+			<tr>
+				<td><%= link_to url.short_url, url.long_url %></td> 
+				<td><%= url.long_url %></td>
+			</tr>
+		<% end %>
+</table>
+
